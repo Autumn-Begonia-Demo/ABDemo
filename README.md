@@ -6,7 +6,10 @@ Simply put, the new git rules will enforce
 
 This will enforce you to push all of your new changes into a branch and use Pull Requests to merge into master/main, thereby protecting it from unstable code changes.
 
-> Note: This note is mostly designed for users of Github.com or Github Desktop. If you use terminals like Git Bash then feel free to ignore the tutorials. You are based and I should not be telling you what to do with your life, assuming you already know what you are doing.
+> Note 1: This note is mostly designed for users of Github.com or Github Desktop. If you use terminals like Git Bash then feel free to ignore the tutorials. You are based and I should not be telling you what to do with your life, assuming you already know what you are doing.
+
+
+> Note 2: The roles mentioned here are only applicable when the repository is owned by an "organization" account, which I urge that we transfer to one immediately.
 
 ***
 
