@@ -61,10 +61,13 @@ It may look different to you, as you are probably not an admin (unless you are),
 There are a variety of ways you can achieve this.  
 If you use GitHub Desktop, it is detailed here: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch
 
-You may use the compare branches and merge on GitHub.com as well (similar to a merge request, however, the base is now your development branch).  
-On command line, you can choose to git rebase, git merge, or git cherry-pick (specific commits).
+You may use the compare branches and merge on GitHub.com as well (similar to a merge request, however, the base is now your development branch).  You will have to go through the same procedure on Github.com as a pull request, however, you will (probably) not need the approval to merge into an unprotected branch (like your development branch).  
+On command line, you can choose to git rebase, git merge, or git cherry-pick (specific commits). You will have to use this or Desktop if you do not wish to open a merge request.
 
 The main difference is that git rebase may mess up commit history tree by stacking previous commits into the stack without you noticing, while merge commits will generate new (maybe squashed) merge commits in your commit log.  
+
+
+***
 ### I see merge conflicts when I merge, what do I do?
 
 When there are divergent changes between your development branch and the main branch (the one you are pushing into and the one you need to merge into), you may find yourself with merge conflicts when you try to merge the Pull Request.
@@ -76,5 +79,12 @@ Worry not! What you could do is to simply resolve them! It's not that hard.
 tldr: simply resolve the conflicts (you can see conflicted files indicated by the error message) which will be enclosed with "=====" or "<<<<<" or ">>>>>". Edit these files to your liking and get rid of these enclosures and save. You can click on "Mark as resolved" on Github Desktop.
 
 Alternatively, to prevent merge conflicts, you can merge/rebase the main branch into your developmentment branch before you push the "merge" button. That way, you can resolve the conflicts before they prop up and always make your development branch updated.
+
+***
+### How do I compare content on my branch over other branches?
+Simple! You can add "/compare" to the url of the repository, and you will be lead to the same compare page as the one in the merge request. There, you can pick the branches you are comparing with. Base is the branch to merge into and compare is the one where the changes currently are.  
+
+For example, for this repo, the url is: github.com/Autumn-Begonia-Demo/ABDemo/compare
+
 
 ### For the guide for maintainers and admins, you can look to maintainer.md in the same folder as this file.
