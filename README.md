@@ -34,7 +34,7 @@ Switching branches: https://docs.github.com/en/desktop/contributing-and-collabor
 
 Deleting a branch: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/managing-branches#deleting-a-branch  
 
-If you are using Github.com, this should be intuitive.  
+If you are using Github.com, this should be intuitive.  You can look to the "view all branches" to interact and delete branches.  
 ![image](https://user-images.githubusercontent.com/77932983/144911956-45726cea-661a-4f9c-904f-facbf0a2dbef.png) 
 
 ***
@@ -50,10 +50,15 @@ Then click "Create new Pull Request" which should lead you here. ![image](https:
 
 You will see this interface when you choose the branch you want to merge into as "base", and your development branch as "compare". Then, click "create pull request" after you finished reviewing changes. Afterward, you may see an interface like this. ![image](https://user-images.githubusercontent.com/77932983/144913595-b64592a2-c468-4097-88b0-ef02c3f230dc.png)
 
-It may look different to you, as you are probably not an admin (unless you are), which means you will need to gain approval to merge. Click on this to request reviews from people. ![image](https://user-images.githubusercontent.com/77932983/144913745-92b3ddc5-fc9d-4b52-a815-b77f0483ea53.png) When they approve, you will see the merge button turn green and you will be able to merge it. 
-
+It may look different to you, as you are probably not an admin (unless you are), which means you will need to gain approval to merge. Click on this to request reviews from people. ![image](https://user-images.githubusercontent.com/77932983/144913745-92b3ddc5-fc9d-4b52-a815-b77f0483ea53.png)  
+When they approve, you will see the merge button turn green and you will be able to merge it, which should look like this.  
+![image](https://user-images.githubusercontent.com/77932983/144950951-8fcaf95b-3b05-43fd-9c7c-bf71856fab06.png)  
+Needless to say, you click the green button to merge.  
 ## Voila, you have now merged your changes!
 
+> Note: You have to obtain approval if it's a protected branch you are merging into (but not if it's unprotected). You can see which branches are protected in settings/branches if you have access. Main/master should always be protected. Sometimes your merge request may be rejected or asked to change. In which case you can continue to commmit to the branch and ask for review again. Hopefully your reviewer is satisfied and will let you through with the new changes.
+
+## Important: Always make sure the code is stable in your merge requested code! You can do whatever you want in your own branch, but when it is being merged into master, you have the resposibility to make sure it works.  
 ***
 
 ### I want to sync my local branch with changes in other branches (like main), what do I do?
