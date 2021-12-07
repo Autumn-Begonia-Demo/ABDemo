@@ -56,7 +56,16 @@ It may look different to you, as you are probably not an admin (unless you are),
 
 ***
 
-### I see merge conflicts, what do I do?
+### I want to sync my local branch with changes in other branches (like main), what do I do?
+
+There are a variety of ways you can achieve this.  
+If you use GitHub Desktop, it is detailed here: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch
+
+You may use the compare branches and merge on GitHub.com as well (similar to a merge request, however, the base is now your development branch).  
+On command line, you can choose to git rebase, git merge, or git cherry-pick (specific commits).
+
+The main difference is that git rebase may mess up commit history tree by stacking previous commits into the stack without you noticing, while merge commits will generate new (maybe squashed) merge commits in your commit log.  
+### I see merge conflicts when I merge, what do I do?
 
 When there are divergent changes between your development branch and the main branch (the one you are pushing into and the one you need to merge into), you may find yourself with merge conflicts when you try to merge the Pull Request.
 
