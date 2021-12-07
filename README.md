@@ -1,7 +1,8 @@
 ### **So, what is the new git rule change?** 
 
 Simply put, the new git rules will enforce  
-- branch protection (such as main/master), that is  
+- branch protection (such as main/master), that will not allow commits into master directly.
+- Instead, you will be pushing into a development branch and submit a merge request and obtain approval in order to make your work into the mod release.
 - Allow forced push (git push -f) for only members with maintainer or admin role (that is, you can bypass the above by using forced push only if you are given the role).  
 
 This will enforce you to push all of your new changes into a branch and use Pull Requests to merge into master/main, thereby protecting it from unstable code changes.
