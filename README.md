@@ -1,3 +1,5 @@
+### Before you start: If you have no idea how Git works, read this first: https://docs.google.com/document/d/1bQdOVMY6FTu-2AKXZblYp6bF2-_W2JMUtXc5a0nZ8Ls/edit  
+
 ### **So, what is the new git rule change?** 
 
 Simply put, the new git rules will enforce  
@@ -11,6 +13,8 @@ This will enforce you to push all of your new changes into a branch and use Pull
 
 
 > Note 2: The roles mentioned here are only applicable when the repository is owned by an "organization" account, which I urge that we transfer to one immediately.
+
+### Important: While it is acceptable to use Github.com as a UI for managing commits, directly commmitting on Github.com UI is still banned unless otherwise permitted.
 
 ***
 
@@ -58,7 +62,8 @@ Needless to say, you click the green button to merge.
 
 > Note: You have to obtain approval if it's a protected branch you are merging into (but not if it's unprotected). You can see which branches are protected in settings/branches if you have access. Main/master should always be protected. Sometimes your merge request may be rejected or asked to change. In which case you can continue to commmit to the branch and ask for review again. Hopefully your reviewer is satisfied and will let you through with the new changes.
 
-## Important: Always make sure the code is stable in your merge requested code! You can do whatever you want in your own branch, but when it is being merged into master, you have the resposibility to make sure it works.  
+## Important: **You have the resposibility to make sure your merge request does not break the game.**
+> While it is encouraged that you test your own code before commmitting, you may do whatever you wish with your own branch. In terms of merge requests, the development team and reviewers may review your work, but at the end of the day, your merge request **WILL BE REVERTED** if it is unstable, even if it has been merged already.
 ***
 
 ### I want to sync my local branch with changes in other branches (like main), what do I do?
