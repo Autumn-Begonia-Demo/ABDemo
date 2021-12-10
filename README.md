@@ -7,7 +7,7 @@ Simply put, the new git rules will enforce
 - Instead, you will be pushing into a development branch and submit a merge request and obtain approval in order to make your work into the mod release.
 - Allow forced push (git push -f) for only members with maintainer or admin role (that is, you can bypass the above by using forced push only if you are given the role).  
 
-This will enforce you to push all of your new changes into a branch and use Pull Requests to merge into master/main, thereby protecting it from unstable code changes.
+This will enforce you to push all of your new changes into a branch and use Pull Requests with approval to merge into master/main, thereby protecting it from unstable code changes. However, this also means that you are free to do whatever you want on your own branch (but this does not mean we won't see your commits).
 
 > Note 1: This note is mostly designed for users of Github.com or Github Desktop. If you use terminals like Git Bash then feel free to ignore the tutorials. You are based and I should not be telling you what to do with your life, assuming you already know what you are doing. Just know that now we are doing things the right way.
 
@@ -156,3 +156,4 @@ Note that you will probably have to push to remote after you do these locally to
 > - https://git-scm.com/docs/git-reflog
 
 ### For the guide for maintainers and admins, you can look to maintainer.md in the same folder as this file.
+#### If you have any other questions about the upcoming git overhaul, feel free to reach out to @Meihua35, or @Robbot#9643 on discord.
