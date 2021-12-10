@@ -116,6 +116,7 @@ Long answer: It depends. There are multiple ways of reverting changes depending 
 > **Reverting a merge**: 
 > - On Github desktop: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/reverting-a-commit (Just revert the merge commit)
 > - On Github.com: You can only revert merge requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/reverting-a-pull-request
+![image](https://user-images.githubusercontent.com/77932983/145525813-36255dc6-3c41-4018-9cc1-0f42f430ad82.png)
 > - On terminal: git revert -m 1 [commit-hash of merge commit] (use -m 2 if you want to revert the merge on the branch that is already merged, which seems unlikely that you will do)
 
 > **Reverting pushed commits**:
