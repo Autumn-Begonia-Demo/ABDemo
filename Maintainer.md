@@ -51,6 +51,10 @@ There is no forced push on Github.com. Also, if you are using a terminal, why ar
 #### Other options are also shown should you choose to use them.
 
 ***
+### How do I revert a merge?
+Please just go read https://github.com/Autumn-Begonia-Demo/ABDemo#help-i-did-something-wrong-on-and-now-i-want-to-undo-it-what-do-i-do, ~~Carmel-chan~~.  
+
+***
 ### How much time should I spend on reviewing? How high is the review standard?
 Honestly, this is for you to figure out yourself. Our baseline for merging into master is that it doesn't break the game. That aside, whether it is rubber stamping everything or looking over the commit line by line is your choice. That said, once again, make sure the merge request does not break the game 
 ***
