@@ -60,11 +60,17 @@ It may look different to you, as you are probably not an admin (unless you are),
 When they approve, you will see the merge button turn green and you will be able to merge it, which should look like this.  
 ![image](https://user-images.githubusercontent.com/77932983/144950951-8fcaf95b-3b05-43fd-9c7c-bf71856fab06.png)  
 Needless to say, you click the green button to merge.  
-## Voila, you have now merged your changes!
+
+
+#### _Voila, you have now merged your changes!_
+
 
 > Note: You have to obtain approval if it's a protected branch you are merging into (but not if it's unprotected). You can see which branches are protected in settings/branches if you have access. Main/master should always be protected. Sometimes your merge request may be rejected or asked to change. In which case you can continue to commmit to the branch and ask for review again. Hopefully your reviewer is satisfied and will let you through with the new changes.
 
-## Important: **You have the resposibility to make sure your merge request does not break the game.**
+
+### Important: **You have the resposibility to make sure your merge request does not break the game.**
+
+
 > While it is encouraged that you test your own code before commmitting, you may do whatever you wish with your own branch. In terms of merge requests, the development team and reviewers may review your work, but at the end of the day, your merge request **WILL BE REVERTED** if it is unstable, even if it has been merged already.
 ***
 
@@ -76,11 +82,14 @@ There are a variety of ways you can achieve this.
 If you use GitHub Desktop, it is detailed here: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch
 
 You may use the compare branches and merge on GitHub.com as well (similar to a merge request, however, the base is now your development branch).  You will have to go through the same procedure on Github.com as a pull request, however, you will (probably) not need the approval to merge into an unprotected branch (like your development branch).  
+
 On command line, you can choose to git rebase, git merge, or git cherry-pick (specific commits). You will have to use this or Desktop if you do not wish to open a merge request.
 
 The main difference is that git rebase may mess up commit history tree by stacking previous commits into the stack without you noticing, while merge commits will generate new (maybe squashed, depending on if you choose it) merge commit(s) in your commit log.  
 
-As a result of the differences between the three options, in a team-wide collaborative environment like a modding team, ***you are strongly encouraged to use merge for changing anything remote*** (that is, anything that makes it onto github.com, as opposed to commits that you did not push to origin), even if it comes off a bit messy. However, if you are not concerned with the historical order of things and are not concerned about potentially reverting the merge (you will have to manually reset your branch pointer if you want to revert things, also, go read the I want to revert question for more details), then feel free to use rebase (I would recommend you do rebase on your development branch to keep sync with master, but this option is only available on terminal, so check out if you are interested: https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase), and in some situations, cherry-pick can come in very handy. 
+As a result of the differences between the three options, in a team-wide collaborative environment like a modding team, ***you are strongly encouraged to use merge for changing anything remote*** (that is, anything that makes it onto github.com, as opposed to commits that you did not push to origin), even if it comes off a bit messy. The main advantage is that you can simply revert the merge to undo everything in the merge.  
+
+However, if you are not concerned with the historical order of things and are not concerned about potentially reverting the merge (you will have to manually reset your branch pointer in that case, read the "I want to undo" question below for more details), then feel free to use git rebase. I would recommend you do rebase on your development branch to keep sync with master; however, this option is only available on terminal. Check out https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) for more details.
 
 
 ***
@@ -96,7 +105,7 @@ Worry not! What you could do is to simply resolve them! It's not that hard.
 
 tldr: simply resolve the conflicts (you can see conflicted files indicated by the error message) which will be enclosed with "=====" or "<<<<<" or ">>>>>". Edit these files to your liking and get rid of these enclosures and save. You can click on "Mark as resolved" on Github Desktop.
 
-Alternatively, to prevent merge conflicts, you can merge/rebase the main branch into your developmentment branch before you push the "merge" button. That way, you can resolve the conflicts before they prop up and always make your development branch updated.
+Alternatively, to prevent merge conflicts, you can merge/rebase the main branch into your development branch before you push the "merge" button. That way, you can resolve the conflicts before they prop up and always make your development branch updated.
 
 ***
 
