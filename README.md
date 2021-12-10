@@ -9,10 +9,11 @@ Simply put, the new git rules will enforce
 
 This will enforce you to push all of your new changes into a branch and use Pull Requests to merge into master/main, thereby protecting it from unstable code changes.
 
-> Note 1: This note is mostly designed for users of Github.com or Github Desktop. If you use terminals like Git Bash then feel free to ignore the tutorials. You are based and I should not be telling you what to do with your life, assuming you already know what you are doing.
+> Note 1: This note is mostly designed for users of Github.com or Github Desktop. If you use terminals like Git Bash then feel free to ignore the tutorials. You are based and I should not be telling you what to do with your life, assuming you already know what you are doing. Just know that now we are doing things the right way.
 
 
 > Note 2: The roles mentioned here are only applicable when the repository is owned by an "organization" account, which I urge that we transfer to one immediately.
+
 
 ### Important: While it is acceptable to use Github.com as a UI for managing commits, directly commmitting on Github.com UI is still banned unless otherwise permitted.
 
@@ -43,6 +44,7 @@ If you are using Github.com, this should be intuitive.  You can look to the "vie
 
 ***
 
+
 ### **How do I submit a pull request?**
 When you are ready, simply submit a Pull Request like this and wait for an approval (if you cannot approve yourself, that is). Once it is approved, your changes will be added into master/main with the click of a button like this!
 
@@ -66,7 +68,9 @@ Needless to say, you click the green button to merge.
 > While it is encouraged that you test your own code before commmitting, you may do whatever you wish with your own branch. In terms of merge requests, the development team and reviewers may review your work, but at the end of the day, your merge request **WILL BE REVERTED** if it is unstable, even if it has been merged already.
 ***
 
-### I want to sync my local branch with changes in other branches (like main), what do I do?
+
+
+### **I want to sync my local branch with changes in other branches (like main), what do I do?**
 
 There are a variety of ways you can achieve this.  
 If you use GitHub Desktop, it is detailed here: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch
@@ -74,11 +78,15 @@ If you use GitHub Desktop, it is detailed here: https://docs.github.com/en/deskt
 You may use the compare branches and merge on GitHub.com as well (similar to a merge request, however, the base is now your development branch).  You will have to go through the same procedure on Github.com as a pull request, however, you will (probably) not need the approval to merge into an unprotected branch (like your development branch).  
 On command line, you can choose to git rebase, git merge, or git cherry-pick (specific commits). You will have to use this or Desktop if you do not wish to open a merge request.
 
-The main difference is that git rebase may mess up commit history tree by stacking previous commits into the stack without you noticing, while merge commits will generate new (maybe squashed) merge commits in your commit log.  
+The main difference is that git rebase may mess up commit history tree by stacking previous commits into the stack without you noticing, while merge commits will generate new (maybe squashed, depending on if you choose it) merge commit(s) in your commit log.  
+
+As a result of the differences between the three options, in a team-wide collaborative environment like a modding team, ***you are strongly encouraged to use merge for changing anything remote*** (that is, anything that makes it onto github.com, as opposed to commits that you did not push to origin), even if it comes off a bit messy. However, if you are not concerned with the historical order of things and are not concerned about potentially reverting the merge (you will have to manually reset your branch pointer if you want to revert things, also, go read the I want to revert question for more details), then feel free to use rebase (I would recommend you do rebase on your development branch to keep sync with master, but this option is only available on terminal, so check out if you are interested: https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase), and in some situations, cherry-pick can come in very handy. 
 
 
 ***
-### I see merge conflicts when I merge, what do I do?
+
+
+### **I see merge conflicts when I merge, what do I do?**
 
 When there are divergent changes between your development branch and the main branch (the one you are pushing into and the one you need to merge into), you may find yourself with merge conflicts when you try to merge the Pull Request.
 
@@ -91,10 +99,59 @@ tldr: simply resolve the conflicts (you can see conflicted files indicated by th
 Alternatively, to prevent merge conflicts, you can merge/rebase the main branch into your developmentment branch before you push the "merge" button. That way, you can resolve the conflicts before they prop up and always make your development branch updated.
 
 ***
-### How do I compare content on my branch over other branches?
+
+
+### **How do I compare content on my branch over other branches?**
 Simple! You can add "/compare" to the url of the repository, and you will be lead to the same compare page as the one in the merge request. There, you can pick the branches you are comparing with. Base is the branch to merge into and compare is the one where the changes currently are.  
 
 For example, for this repo, the url is: github.com/Autumn-Begonia-Demo/ABDemo/compare
 
+***
+
+
+### Help! I did something wrong on and now I want to undo it, what do I do?
+Short answer: Probably git revert.  
+
+Long answer: It depends. There are multiple ways of reverting changes depending on your situation, but of course there are some ways that are preferred over others.  
+> **Reverting a merge**: 
+> - On Github desktop: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/reverting-a-commit (Just revert the merge commit)
+> - On Github.com: You can only revert merge requests: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/reverting-a-pull-request
+> - On terminal: git revert -m 1 [commit-hash of merge commit] (use -m 2 if you want to revert the merge on the branch that is already merged, which seems unlikely that you will do)
+
+> **Reverting pushed commits**:
+> - On Github desktop: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/reverting-a-commit
+> - On Github.com: Not possible lol.
+> - On terminal: "git revert HEAD~n" (given n is the number of the last n commmits you want to revert) or "git revert [commit-hash]". This will generate a revert commit.
+> - On terminal (again): "git reset HEAD~n --hard", followed by "git push -f origin <branch-name>" to push to remote. This will remove the commit entirely. This also assumes you can do forced push.
+
+> **Reverting local commits**:
+> - On Github desktop: https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/reverting-a-commit (I mean, is there really a such thing as a local commit on Github Desktop?)
+> - On Github.com: Not applicable. I mean, you are already committing onto a web server when you are committing on Github.com, so what does local even mean anymore?
+> - On terminal: If you want a revert commit, see above. If you do not, use "git reset" as above, but no need to force push. You may also choose --soft or default (--mixed). For details, check out https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard.
+  
+#### _You are now entering command line territory. Tread at your own discretion._
+
+Note that you will probably have to push to remote after you do these locally to reflect it on Github.com.
+  
+> **Changing the content of the last commit (or just changing the commmit message)**:
+> - "git commmit --amend", then put in any changes if you have any, or simply edit the comment with -m "comment" added to your command.
+  
+> **Changing the order, amending a lot of commits, squash commits, or just do lots of things for lots of commits from the past**:
+> - "git rebase -i HEAD~n", then, depending on what you want to do with each commit:  
+> -- p, pick <commit> = use commit  
+> -- r, reword <commit> = use commit, but edit the commit message  
+> -- e, edit <commit> = use commit, but stop for amending  
+> -- s, squash <commit> = use commit, but meld into previous commit  
+> -- f, fixup <commit> = like "squash", but discard this commit's log message  
+> -- d, drop <commit> = remove commit  
+> and a lot more options you can check out here: https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History. You will need to know how to vim for this, probably.
+
+> **Switch to a detached commit**:
+> - "git checkout [commit-hash]". Note that passing in the branch name instead of commit hash will switch you to that branch.
+  
+> **Retrieve a commit that is no longer included in any branches**:
+> - "git reflog show --all"
+>  Note that a commit that is no longer included in the commit log of any branches will be cleaned after 30 days. After which it will be permenantly deleted.
+> - https://git-scm.com/docs/git-reflog
 
 ### For the guide for maintainers and admins, you can look to maintainer.md in the same folder as this file.
