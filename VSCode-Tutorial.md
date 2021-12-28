@@ -28,7 +28,10 @@ If you already have downloaded the repository with git (nto the download with zi
 At the bottom left, you will see two buttons like this.   
 ![image](https://user-images.githubusercontent.com/77932983/147581744-6de282e1-b88b-40b4-bdb5-74413cf9d1b8.png)  
 
-The one on the left (tick counter) is the branch you are on. Click on it and you will be able to switch branches. The one on the right is a "syncronize change" button, where you can do git pull and git push for your commits as well as update your repository to commits from source.
+The one on the left (tick counter) is the branch you are on. Click on it and you will be able to switch branches. The one on the right is a "syncronize change" button, where you can do git pull and git push for your commits as well as update your repository to commits from source.  
+
+#### Note that synchronize changes does not do git fetch! If you want to update your local branches from remote, you need to do git fetch from command palette or terminal separately!
+
 
 Other git commands can be prompted either with the terminal   
 ![image](https://user-images.githubuserco ntent.com/77932983/147582017-727a6cb8-ec79-482f-bf6c-8650a2d39bab.png)  
@@ -51,7 +54,7 @@ to stage your files, then you will see staged changes. These are the changes goi
 Afterwards, simply synchronize your changes with by clicking the button at the bottom left.
 ***
 
-The details and tutorials for other git commands (such as git fetch) will not be detailed here as they are detailed in another document. However, the same commands and procedures apply here as well.
+The details and tutorials for other git commands (such as git fetch to keep your local repository up to date with remote before you pull, as well as updating branches) will not be detailed here as they are detailed in another document. However, the same commands and procedures apply here as well. Please go over the README.md in this repository as well as the modding git guide for proper procedures.
 
 
 For more details about VS Code Source Control, you can check out the official documentation here: https://code.visualstudio.com/docs/editor/versioncontrol
