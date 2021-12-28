@@ -1,5 +1,7 @@
 ### Before you start: If you have no idea how Git works, read this first: https://docs.google.com/document/d/1bQdOVMY6FTu-2AKXZblYp6bF2-_W2JMUtXc5a0nZ8Ls/edit  
 
+### To set up Github Desktop, see this guide https://docs.google.com/document/d/1lkH4UmSU3yLUi10ub2ptWmOrNqI8ACFMvFXKJfd0yOA/edit?usp=sharing.  
+### To set up VS Code with git, open the markdown file VSCode-Tutorial.md on this repository.  
 ### **So, what is the new git rule change?** 
 
 Simply put, the new git rules will enforce  
